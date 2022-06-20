@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /*display:flex = organiza os elementos.*/
+  align-items: center;
+}
+
+.container .container2 {
+  width: 500px;
+  height: 500px;
+  border-radius: 2%;
+  margin: auto;
+  background-image: linear-gradient(
+    to top,
+    #e6e6fa,
+    #f8e4f5,
+    #ffe3e9,
+    #ffe6db,
+    #ffedd3,
+    #ffefd2,
+    #fff0d0,
+    #fff2cf,
+    #ffedd2,
+    #ffe9d7,
+    #ffe6dc,
+    #ffe4e1
+  );
+  display: grid;
+  grid-template-columns: repeat(auto-fit, ninmax(200px, 1fr));
+  gap: 1px;
+}
+
+/*Comentario em CSS*/
+
+.container .container2 #imagem_principal {
+  width: 500px;
+  height: 400px;
+  border-radius: 2%;
+}
+
+.container .container2 .tumb {
+  width: 500px;
+  padding-left: 4px;
+}
+
+.container .container2 .tumb_image {
+  width: 95px;
+  height: 94px;
+  border-radius: 3%;
+  transition: 0.4s;
+  flex: 25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container .container2 .tumb_image:hover {
+  transform: scale(1.4) rotate(15deg);
+}
+
+.container .container2 #imagem_principal,
+.container .container2 .tumb_image {
+  object-fit: center;
+}
+
+i {
+  position: absolute;
+  height: 200px;
+  background: linear-gradient(transparent, #fff);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  animation: animate 5s linear infinite;
+}
+
+i:nth-child(3n + 1) {
+  background: linear-gradient(transparent, #0ff);
+}
+
+i:nth-child(3n + 2) {
+  background: linear-gradient(transparent, #0f0);
+}
+
+i:nth-child(3n + 3) {
+  background: linear-gradient(transparent, #f00);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  100% {
+    transform: translateY(calc(100vh + 200px));
+  }
+}
